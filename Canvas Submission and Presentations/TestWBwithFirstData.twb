@@ -1,0 +1,1224 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20181.18.0510.1418                               -->
+<workbook source-build='2018.1.1 (20181.18.0510.1418)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <SortTagCleanup />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='StateHistory (DashboardData)' inline='true' name='federated.12ny94w00dmn6g10vg8ci1tul05o' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='DashboardData' name='excel-direct.0z63q6y17tbyia17eeqny1x937ko'>
+            <connection class='excel-direct' cleaning='yes' compat='no' dataRefreshTime='' filename='C:/Users/Jackie/Documents/A University of Florida/Fall 2019/ESI4523 Simulation/Project/DashboardData.xls' interpretationMode='1' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <relation join='left' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[StateHistory].[Replication]' />
+              <expression op='[ResourceCostHistory].[Replication]' />
+            </expression>
+          </clause>
+          <relation connection='excel-direct.0z63q6y17tbyia17eeqny1x937ko' name='StateHistory' table='[StateHistory$]' type='table'>
+            <columns gridOrigin='A1:J7743:no:A1:J7743:1' header='yes' lost='0' outcome='1' processed='54194'>
+              <column datatype='integer' name='Scenario' ordinal='0' />
+              <column datatype='integer' name='Replication' ordinal='1' />
+              <column datatype='string' name='ObjectName' ordinal='2' />
+              <column datatype='integer' name='OldState' ordinal='3' />
+              <column datatype='integer' name='NewState' ordinal='4' />
+              <column datatype='real' name='Time' ordinal='5' />
+              <column datatype='real' name='StateDuration' ordinal='6' />
+              <column datatype='string' name='OldStateName' ordinal='7' />
+              <column datatype='string' name='NewStateName' ordinal='8' />
+              <column datatype='real' name='TravelDistance' ordinal='9' />
+            </columns>
+          </relation>
+          <relation connection='excel-direct.0z63q6y17tbyia17eeqny1x937ko' name='ResourceCostHistory' table='[ResourceCostHistory$]' type='table'>
+            <columns gridOrigin='A1:L3066:no:A1:L3066:1' lost='0' outcome='1' processed='24520'>
+              <column datatype='integer' name='Scenario' ordinal='0' />
+              <column datatype='integer' name='Replication' ordinal='1' />
+              <column datatype='integer' name='PatientID' ordinal='2' />
+              <column datatype='integer' name='PCI' ordinal='3' />
+              <column datatype='string' name='Track' ordinal='4' />
+              <column datatype='real' name='Time' ordinal='5' />
+              <column datatype='string' name='Activity' ordinal='6' />
+              <column datatype='string' name='ObjectName' ordinal='7' />
+              <column datatype='string' name='GroupName' ordinal='8' />
+              <column datatype='real' name='Salary' ordinal='9' />
+              <column datatype='integer' name='Acuity' ordinal='10' />
+              <column datatype='integer' name='Case' ordinal='11' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[Activity]' value='[ResourceCostHistory].[Activity]' />
+          <map key='[Acuity]' value='[ResourceCostHistory].[Acuity]' />
+          <map key='[Case]' value='[ResourceCostHistory].[Case]' />
+          <map key='[GroupName]' value='[ResourceCostHistory].[GroupName]' />
+          <map key='[NewStateName]' value='[StateHistory].[NewStateName]' />
+          <map key='[NewState]' value='[StateHistory].[NewState]' />
+          <map key='[ObjectName (ResourceCostHistory)]' value='[ResourceCostHistory].[ObjectName]' />
+          <map key='[ObjectName]' value='[StateHistory].[ObjectName]' />
+          <map key='[OldStateName]' value='[StateHistory].[OldStateName]' />
+          <map key='[OldState]' value='[StateHistory].[OldState]' />
+          <map key='[PCI]' value='[ResourceCostHistory].[PCI]' />
+          <map key='[PatientID]' value='[ResourceCostHistory].[PatientID]' />
+          <map key='[Replication (ResourceCostHistory)]' value='[ResourceCostHistory].[Replication]' />
+          <map key='[Replication]' value='[StateHistory].[Replication]' />
+          <map key='[Salary]' value='[ResourceCostHistory].[Salary]' />
+          <map key='[Scenario (ResourceCostHistory)]' value='[ResourceCostHistory].[Scenario]' />
+          <map key='[Scenario]' value='[StateHistory].[Scenario]' />
+          <map key='[StateDuration]' value='[StateHistory].[StateDuration]' />
+          <map key='[Time (ResourceCostHistory)]' value='[ResourceCostHistory].[Time]' />
+          <map key='[Time]' value='[StateHistory].[Time]' />
+          <map key='[Track]' value='[ResourceCostHistory].[Track]' />
+          <map key='[TravelDistance]' value='[StateHistory].[TravelDistance]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Scenario</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Scenario]</local-name>
+            <parent-name>[StateHistory]</parent-name>
+            <remote-alias>Scenario</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Replication</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Replication]</local-name>
+            <parent-name>[StateHistory]</parent-name>
+            <remote-alias>Replication</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ObjectName</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[ObjectName]</local-name>
+            <parent-name>[StateHistory]</parent-name>
+            <remote-alias>ObjectName</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OldState</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[OldState]</local-name>
+            <parent-name>[StateHistory]</parent-name>
+            <remote-alias>OldState</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NewState</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[NewState]</local-name>
+            <parent-name>[StateHistory]</parent-name>
+            <remote-alias>NewState</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Time</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Time]</local-name>
+            <parent-name>[StateHistory]</parent-name>
+            <remote-alias>Time</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>StateDuration</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[StateDuration]</local-name>
+            <parent-name>[StateHistory]</parent-name>
+            <remote-alias>StateDuration</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>OldStateName</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[OldStateName]</local-name>
+            <parent-name>[StateHistory]</parent-name>
+            <remote-alias>OldStateName</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NewStateName</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[NewStateName]</local-name>
+            <parent-name>[StateHistory]</parent-name>
+            <remote-alias>NewStateName</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TravelDistance</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[TravelDistance]</local-name>
+            <parent-name>[StateHistory]</parent-name>
+            <remote-alias>TravelDistance</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[StateHistory]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:J7743:no:A1:J7743:1&quot;</attribute>
+              <attribute datatype='integer' name='lost'>0</attribute>
+              <attribute datatype='integer' name='outcome'>1</attribute>
+              <attribute datatype='integer' name='processed'>54194</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Scenario</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Scenario (ResourceCostHistory)]</local-name>
+            <parent-name>[ResourceCostHistory]</parent-name>
+            <remote-alias>Scenario</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Replication</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Replication (ResourceCostHistory)]</local-name>
+            <parent-name>[ResourceCostHistory]</parent-name>
+            <remote-alias>Replication</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PatientID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[PatientID]</local-name>
+            <parent-name>[ResourceCostHistory]</parent-name>
+            <remote-alias>PatientID</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PCI</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[PCI]</local-name>
+            <parent-name>[ResourceCostHistory]</parent-name>
+            <remote-alias>PCI</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Track</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Track]</local-name>
+            <parent-name>[ResourceCostHistory]</parent-name>
+            <remote-alias>Track</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Time</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Time (ResourceCostHistory)]</local-name>
+            <parent-name>[ResourceCostHistory]</parent-name>
+            <remote-alias>Time</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Activity</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Activity]</local-name>
+            <parent-name>[ResourceCostHistory]</parent-name>
+            <remote-alias>Activity</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ObjectName</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[ObjectName (ResourceCostHistory)]</local-name>
+            <parent-name>[ResourceCostHistory]</parent-name>
+            <remote-alias>ObjectName</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>GroupName</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[GroupName]</local-name>
+            <parent-name>[ResourceCostHistory]</parent-name>
+            <remote-alias>GroupName</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Salary</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Salary]</local-name>
+            <parent-name>[ResourceCostHistory]</parent-name>
+            <remote-alias>Salary</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Acuity</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Acuity]</local-name>
+            <parent-name>[ResourceCostHistory]</parent-name>
+            <remote-alias>Acuity</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Case</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Case]</local-name>
+            <parent-name>[ResourceCostHistory]</parent-name>
+            <remote-alias>Case</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[ResourceCostHistory]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:L3066:no:A1:L3066:1&quot;</attribute>
+              <attribute datatype='integer' name='lost'>0</attribute>
+              <attribute datatype='integer' name='outcome'>1</attribute>
+              <attribute datatype='integer' name='processed'>24520</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Group Name' datatype='string' name='[GroupName]' role='dimension' type='nominal' />
+      <column caption='New State Name' datatype='string' name='[NewStateName]' role='dimension' type='nominal' />
+      <column caption='New State' datatype='integer' name='[NewState]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column datatype='string' name='[Object Name (group)]' role='dimension' type='nominal'>
+        <calculation class='categorical-bin' column='[ObjectName]' new-bin='true'>
+          <bin default-name='true' value='&quot;AnesthesiologistGroup_1, AnesthesiologistGroup_2, AnesthesiologistGroup_3 and 2 more&quot;'>
+            <value>&quot;AnesthesiologistGroup_1&quot;</value>
+            <value>&quot;AnesthesiologistGroup_2&quot;</value>
+            <value>&quot;AnesthesiologistGroup_3&quot;</value>
+            <value>&quot;AnesthesiologistGroup_4&quot;</value>
+            <value>&quot;AnesthesiologistGroup_5&quot;</value>
+          </bin>
+          <bin default-name='true' value='&quot;CirculatingNurse_1, CirculatingNurse_2, CirculatingNurse_3 and 2 more&quot;'>
+            <value>&quot;CirculatingNurse_1&quot;</value>
+            <value>&quot;CirculatingNurse_2&quot;</value>
+            <value>&quot;CirculatingNurse_3&quot;</value>
+            <value>&quot;CirculatingNurse_4&quot;</value>
+            <value>&quot;CirculatingNurse_5&quot;</value>
+          </bin>
+          <bin default-name='true' value='&quot;DrBrittany, DrBrown, DrCueva and 7 more&quot;'>
+            <value>&quot;DrBrittany&quot;</value>
+            <value>&quot;DrBrown&quot;</value>
+            <value>&quot;DrCueva&quot;</value>
+            <value>&quot;DrGillespie&quot;</value>
+            <value>&quot;DrGrace&quot;</value>
+            <value>&quot;DrJones&quot;</value>
+            <value>&quot;DrMack&quot;</value>
+            <value>&quot;DrNordgren&quot;</value>
+            <value>&quot;DrSmith&quot;</value>
+            <value>&quot;DrThomas&quot;</value>
+          </bin>
+          <bin default-name='true' value='&quot;DressingRoom1 &amp; DressingRoom2&quot;'>
+            <value>&quot;DressingRoom1&quot;</value>
+            <value>&quot;DressingRoom2&quot;</value>
+          </bin>
+          <bin default-name='true' value='&quot;Gurney_1, Gurney_2, Gurney_3&quot;'>
+            <value>&quot;Gurney_1&quot;</value>
+            <value>&quot;Gurney_2&quot;</value>
+            <value>&quot;Gurney_3&quot;</value>
+          </bin>
+          <bin default-name='true' value='&quot;MaintenanceGroup_1, MaintenanceGroup_2, MaintenanceGroup_3&quot;'>
+            <value>&quot;MaintenanceGroup_1&quot;</value>
+            <value>&quot;MaintenanceGroup_2&quot;</value>
+            <value>&quot;MaintenanceGroup_3&quot;</value>
+          </bin>
+          <bin default-name='true' value='&quot;OR1, OR2, OR3&quot;'>
+            <value>&quot;OR1&quot;</value>
+            <value>&quot;OR2&quot;</value>
+            <value>&quot;OR3&quot;</value>
+          </bin>
+          <bin default-name='true' value='&quot;PACU_Nurse_1, PACU_Nurse_2, PACU_Nurse_3&quot;'>
+            <value>&quot;PACU_Nurse_1&quot;</value>
+            <value>&quot;PACU_Nurse_2&quot;</value>
+            <value>&quot;PACU_Nurse_3&quot;</value>
+          </bin>
+          <bin default-name='true' value='&quot;PACU1, PACU2, PACU3 and 6 more&quot;'>
+            <value>&quot;PACU1&quot;</value>
+            <value>&quot;PACU2&quot;</value>
+            <value>&quot;PACU3&quot;</value>
+            <value>&quot;PACU4&quot;</value>
+            <value>&quot;PACU5&quot;</value>
+            <value>&quot;PACU6&quot;</value>
+            <value>&quot;PACU7&quot;</value>
+            <value>&quot;PACU8&quot;</value>
+            <value>&quot;PACU9&quot;</value>
+          </bin>
+          <bin default-name='true' value='&quot;PreOP_Nurse_1, PreOP_Nurse_2, PreOP_Nurse_3&quot;'>
+            <value>&quot;PreOP_Nurse_1&quot;</value>
+            <value>&quot;PreOP_Nurse_2&quot;</value>
+            <value>&quot;PreOP_Nurse_3&quot;</value>
+          </bin>
+          <bin default-name='true' value='&quot;PreOp1, PreOp2, PreOp3 and 1 more&quot;'>
+            <value>&quot;PreOp1&quot;</value>
+            <value>&quot;PreOp2&quot;</value>
+            <value>&quot;PreOp3&quot;</value>
+            <value>&quot;PreOp4&quot;</value>
+          </bin>
+          <bin default-name='true' value='&quot;ScrubNurse_1, ScrubNurse_2, ScrubNurse_3 and 2 more&quot;'>
+            <value>&quot;ScrubNurse_1&quot;</value>
+            <value>&quot;ScrubNurse_2&quot;</value>
+            <value>&quot;ScrubNurse_3&quot;</value>
+            <value>&quot;ScrubNurse_4&quot;</value>
+            <value>&quot;ScrubNurse_5&quot;</value>
+          </bin>
+          <bin default-name='true' value='&quot;UnitBed_1, UnitBed_2, UnitBed_3 and 6 more&quot;'>
+            <value>&quot;UnitBed_1&quot;</value>
+            <value>&quot;UnitBed_2&quot;</value>
+            <value>&quot;UnitBed_3&quot;</value>
+            <value>&quot;UnitBed_4&quot;</value>
+            <value>&quot;UnitBed_5&quot;</value>
+            <value>&quot;UnitBed_6&quot;</value>
+            <value>&quot;UnitBed_7&quot;</value>
+            <value>&quot;UnitBed_8&quot;</value>
+            <value>&quot;UnitBed_9&quot;</value>
+          </bin>
+          <bin default-name='true' value='&quot;UnitNurse_1, UnitNurse_2, UnitNurse_3&quot;'>
+            <value>&quot;UnitNurse_1&quot;</value>
+            <value>&quot;UnitNurse_2&quot;</value>
+            <value>&quot;UnitNurse_3&quot;</value>
+          </bin>
+          <bin default-name='true' value='&quot;WaitingRoom1, WaitingRoom2, WaitingRoom3&quot;'>
+            <value>&quot;WaitingRoom1&quot;</value>
+            <value>&quot;WaitingRoom2&quot;</value>
+            <value>&quot;WaitingRoom3&quot;</value>
+          </bin>
+          <bin default-name='true' value='&quot;Wheelchair_1 &amp; Wheelchair_2&quot;'>
+            <value>&quot;Wheelchair_1&quot;</value>
+            <value>&quot;Wheelchair_2&quot;</value>
+          </bin>
+        </calculation>
+      </column>
+      <column caption='Object Name' datatype='string' name='[ObjectName]' role='dimension' type='nominal' />
+      <column caption='Old State Name' datatype='string' name='[OldStateName]' role='dimension' type='nominal' />
+      <column caption='Old State' datatype='integer' name='[OldState]' role='measure' type='quantitative' />
+      <column caption='Patient ID' datatype='integer' name='[PatientID]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Scenario]' role='dimension' type='ordinal'>
+        <aliases>
+          <alias key='1' value='Only 1 Staff' />
+        </aliases>
+      </column>
+      <column caption='State Duration' datatype='real' name='[StateDuration]' role='measure' type='quantitative' />
+      <column caption='Travel Distance' datatype='real' name='[TravelDistance]' role='measure' type='quantitative' />
+      <column-instance column='[Scenario]' derivation='None' name='[none:Scenario:ok]' pivot='key' type='ordinal' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.430127' measure-ordering='alphabetic' measure-percentage='0.569873' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Scenario:ok]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>1</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>3</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>2</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='ResourceState'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='StateHistory (DashboardData)' name='federated.12ny94w00dmn6g10vg8ci1tul05o' />
+          </datasources>
+          <datasource-dependencies datasource='federated.12ny94w00dmn6g10vg8ci1tul05o'>
+            <column caption='New State Name' datatype='string' name='[NewStateName]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Object Name (group)]' role='dimension' type='nominal'>
+              <calculation class='categorical-bin' column='[ObjectName]' new-bin='true'>
+                <bin default-name='true' value='&quot;AnesthesiologistGroup_1, AnesthesiologistGroup_2, AnesthesiologistGroup_3 and 2 more&quot;'>
+                  <value>&quot;AnesthesiologistGroup_1&quot;</value>
+                  <value>&quot;AnesthesiologistGroup_2&quot;</value>
+                  <value>&quot;AnesthesiologistGroup_3&quot;</value>
+                  <value>&quot;AnesthesiologistGroup_4&quot;</value>
+                  <value>&quot;AnesthesiologistGroup_5&quot;</value>
+                </bin>
+                <bin default-name='true' value='&quot;CirculatingNurse_1, CirculatingNurse_2, CirculatingNurse_3 and 2 more&quot;'>
+                  <value>&quot;CirculatingNurse_1&quot;</value>
+                  <value>&quot;CirculatingNurse_2&quot;</value>
+                  <value>&quot;CirculatingNurse_3&quot;</value>
+                  <value>&quot;CirculatingNurse_4&quot;</value>
+                  <value>&quot;CirculatingNurse_5&quot;</value>
+                </bin>
+                <bin default-name='true' value='&quot;DrBrittany, DrBrown, DrCueva and 7 more&quot;'>
+                  <value>&quot;DrBrittany&quot;</value>
+                  <value>&quot;DrBrown&quot;</value>
+                  <value>&quot;DrCueva&quot;</value>
+                  <value>&quot;DrGillespie&quot;</value>
+                  <value>&quot;DrGrace&quot;</value>
+                  <value>&quot;DrJones&quot;</value>
+                  <value>&quot;DrMack&quot;</value>
+                  <value>&quot;DrNordgren&quot;</value>
+                  <value>&quot;DrSmith&quot;</value>
+                  <value>&quot;DrThomas&quot;</value>
+                </bin>
+                <bin default-name='true' value='&quot;DressingRoom1 &amp; DressingRoom2&quot;'>
+                  <value>&quot;DressingRoom1&quot;</value>
+                  <value>&quot;DressingRoom2&quot;</value>
+                </bin>
+                <bin default-name='true' value='&quot;Gurney_1, Gurney_2, Gurney_3&quot;'>
+                  <value>&quot;Gurney_1&quot;</value>
+                  <value>&quot;Gurney_2&quot;</value>
+                  <value>&quot;Gurney_3&quot;</value>
+                </bin>
+                <bin default-name='true' value='&quot;MaintenanceGroup_1, MaintenanceGroup_2, MaintenanceGroup_3&quot;'>
+                  <value>&quot;MaintenanceGroup_1&quot;</value>
+                  <value>&quot;MaintenanceGroup_2&quot;</value>
+                  <value>&quot;MaintenanceGroup_3&quot;</value>
+                </bin>
+                <bin default-name='true' value='&quot;OR1, OR2, OR3&quot;'>
+                  <value>&quot;OR1&quot;</value>
+                  <value>&quot;OR2&quot;</value>
+                  <value>&quot;OR3&quot;</value>
+                </bin>
+                <bin default-name='true' value='&quot;PACU_Nurse_1, PACU_Nurse_2, PACU_Nurse_3&quot;'>
+                  <value>&quot;PACU_Nurse_1&quot;</value>
+                  <value>&quot;PACU_Nurse_2&quot;</value>
+                  <value>&quot;PACU_Nurse_3&quot;</value>
+                </bin>
+                <bin default-name='true' value='&quot;PACU1, PACU2, PACU3 and 6 more&quot;'>
+                  <value>&quot;PACU1&quot;</value>
+                  <value>&quot;PACU2&quot;</value>
+                  <value>&quot;PACU3&quot;</value>
+                  <value>&quot;PACU4&quot;</value>
+                  <value>&quot;PACU5&quot;</value>
+                  <value>&quot;PACU6&quot;</value>
+                  <value>&quot;PACU7&quot;</value>
+                  <value>&quot;PACU8&quot;</value>
+                  <value>&quot;PACU9&quot;</value>
+                </bin>
+                <bin default-name='true' value='&quot;PreOP_Nurse_1, PreOP_Nurse_2, PreOP_Nurse_3&quot;'>
+                  <value>&quot;PreOP_Nurse_1&quot;</value>
+                  <value>&quot;PreOP_Nurse_2&quot;</value>
+                  <value>&quot;PreOP_Nurse_3&quot;</value>
+                </bin>
+                <bin default-name='true' value='&quot;PreOp1, PreOp2, PreOp3 and 1 more&quot;'>
+                  <value>&quot;PreOp1&quot;</value>
+                  <value>&quot;PreOp2&quot;</value>
+                  <value>&quot;PreOp3&quot;</value>
+                  <value>&quot;PreOp4&quot;</value>
+                </bin>
+                <bin default-name='true' value='&quot;ScrubNurse_1, ScrubNurse_2, ScrubNurse_3 and 2 more&quot;'>
+                  <value>&quot;ScrubNurse_1&quot;</value>
+                  <value>&quot;ScrubNurse_2&quot;</value>
+                  <value>&quot;ScrubNurse_3&quot;</value>
+                  <value>&quot;ScrubNurse_4&quot;</value>
+                  <value>&quot;ScrubNurse_5&quot;</value>
+                </bin>
+                <bin default-name='true' value='&quot;UnitBed_1, UnitBed_2, UnitBed_3 and 6 more&quot;'>
+                  <value>&quot;UnitBed_1&quot;</value>
+                  <value>&quot;UnitBed_2&quot;</value>
+                  <value>&quot;UnitBed_3&quot;</value>
+                  <value>&quot;UnitBed_4&quot;</value>
+                  <value>&quot;UnitBed_5&quot;</value>
+                  <value>&quot;UnitBed_6&quot;</value>
+                  <value>&quot;UnitBed_7&quot;</value>
+                  <value>&quot;UnitBed_8&quot;</value>
+                  <value>&quot;UnitBed_9&quot;</value>
+                </bin>
+                <bin default-name='true' value='&quot;UnitNurse_1, UnitNurse_2, UnitNurse_3&quot;'>
+                  <value>&quot;UnitNurse_1&quot;</value>
+                  <value>&quot;UnitNurse_2&quot;</value>
+                  <value>&quot;UnitNurse_3&quot;</value>
+                </bin>
+                <bin default-name='true' value='&quot;WaitingRoom1, WaitingRoom2, WaitingRoom3&quot;'>
+                  <value>&quot;WaitingRoom1&quot;</value>
+                  <value>&quot;WaitingRoom2&quot;</value>
+                  <value>&quot;WaitingRoom3&quot;</value>
+                </bin>
+                <bin default-name='true' value='&quot;Wheelchair_1 &amp; Wheelchair_2&quot;'>
+                  <value>&quot;Wheelchair_1&quot;</value>
+                  <value>&quot;Wheelchair_2&quot;</value>
+                </bin>
+              </calculation>
+            </column>
+            <column caption='Object Name' datatype='string' name='[ObjectName]' role='dimension' type='nominal' />
+            <column datatype='real' name='[Salary]' role='measure' type='quantitative' />
+            <column aggregation='Sum' datatype='integer' name='[Scenario]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='1' value='Only 1 Staff' />
+              </aliases>
+            </column>
+            <column caption='State Duration' datatype='real' name='[StateDuration]' role='measure' type='quantitative' />
+            <column-instance column='[NewStateName]' derivation='Attribute' name='[attr:NewStateName:nk]' pivot='key' type='nominal' />
+            <column-instance column='[NewStateName]' derivation='None' name='[none:NewStateName:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Scenario]' derivation='None' name='[none:Scenario:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Salary]' derivation='Sum' name='[sum:Salary:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[StateDuration]' derivation='Sum' name='[sum:StateDuration:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <manual-sort column='[federated.12ny94w00dmn6g10vg8ci1tul05o].[Object Name (group)]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;AnesthesiologistGroup_1, AnesthesiologistGroup_2, AnesthesiologistGroup_3 and 2 more&quot;</bucket>
+              <bucket>&quot;CirculatingNurse_1, CirculatingNurse_2, CirculatingNurse_3 and 2 more&quot;</bucket>
+              <bucket>&quot;DressingRoom1 &amp; DressingRoom2&quot;</bucket>
+              <bucket>&quot;DrBrittany&quot;</bucket>
+              <bucket>&quot;DrBrown&quot;</bucket>
+              <bucket>&quot;DrCueva&quot;</bucket>
+              <bucket>&quot;DrGillespie&quot;</bucket>
+              <bucket>&quot;DrGrace&quot;</bucket>
+              <bucket>&quot;DrJones&quot;</bucket>
+              <bucket>&quot;DrMack&quot;</bucket>
+              <bucket>&quot;DrNordgren&quot;</bucket>
+              <bucket>&quot;DrSmith&quot;</bucket>
+              <bucket>&quot;DrThomas&quot;</bucket>
+              <bucket>&quot;ERGurney_1&quot;</bucket>
+              <bucket>&quot;ERPatientArrivals1&quot;</bucket>
+              <bucket>&quot;ERPatientExit1&quot;</bucket>
+              <bucket>&quot;ERTech_1&quot;</bucket>
+              <bucket>&quot;Gurney_1&quot;</bucket>
+              <bucket>&quot;Gurney_2&quot;</bucket>
+              <bucket>&quot;Gurney_3&quot;</bucket>
+              <bucket>&quot;InPatientArrivals&quot;</bucket>
+              <bucket>&quot;InPatientExit&quot;</bucket>
+              <bucket>&quot;MaintenanceGroup_1&quot;</bucket>
+              <bucket>&quot;MaintenanceGroup_2&quot;</bucket>
+              <bucket>&quot;MaintenanceGroup_3&quot;</bucket>
+              <bucket>&quot;NurseStation1&quot;</bucket>
+              <bucket>&quot;OR1&quot;</bucket>
+              <bucket>&quot;OR2&quot;</bucket>
+              <bucket>&quot;OR3&quot;</bucket>
+              <bucket>&quot;OutPatientArrivals&quot;</bucket>
+              <bucket>&quot;OutPatientExit&quot;</bucket>
+              <bucket>&quot;PACU1&quot;</bucket>
+              <bucket>&quot;PACU2&quot;</bucket>
+              <bucket>&quot;PACU3&quot;</bucket>
+              <bucket>&quot;PACU4&quot;</bucket>
+              <bucket>&quot;PACU5&quot;</bucket>
+              <bucket>&quot;PACU6&quot;</bucket>
+              <bucket>&quot;PACU7&quot;</bucket>
+              <bucket>&quot;PACU8&quot;</bucket>
+              <bucket>&quot;PACU9&quot;</bucket>
+              <bucket>&quot;PACU_Nurse_1&quot;</bucket>
+              <bucket>&quot;PACU_Nurse_2&quot;</bucket>
+              <bucket>&quot;PACU_Nurse_3&quot;</bucket>
+              <bucket>&quot;PreOp1&quot;</bucket>
+              <bucket>&quot;PreOp2&quot;</bucket>
+              <bucket>&quot;PreOp3&quot;</bucket>
+              <bucket>&quot;PreOp4&quot;</bucket>
+              <bucket>&quot;PreOP_Nurse_1&quot;</bucket>
+              <bucket>&quot;PreOP_Nurse_2&quot;</bucket>
+              <bucket>&quot;PreOP_Nurse_3&quot;</bucket>
+              <bucket>&quot;ScrubNurse_1&quot;</bucket>
+              <bucket>&quot;ScrubNurse_2&quot;</bucket>
+              <bucket>&quot;ScrubNurse_3&quot;</bucket>
+              <bucket>&quot;ScrubNurse_4&quot;</bucket>
+              <bucket>&quot;ScrubNurse_5&quot;</bucket>
+              <bucket>&quot;UnitBed_1&quot;</bucket>
+              <bucket>&quot;UnitBed_2&quot;</bucket>
+              <bucket>&quot;UnitBed_3&quot;</bucket>
+              <bucket>&quot;UnitBed_4&quot;</bucket>
+              <bucket>&quot;UnitBed_5&quot;</bucket>
+              <bucket>&quot;UnitBed_6&quot;</bucket>
+              <bucket>&quot;UnitBed_7&quot;</bucket>
+              <bucket>&quot;UnitBed_8&quot;</bucket>
+              <bucket>&quot;UnitBed_9&quot;</bucket>
+              <bucket>&quot;UnitNurse_1&quot;</bucket>
+              <bucket>&quot;UnitNurse_2&quot;</bucket>
+              <bucket>&quot;UnitNurse_3&quot;</bucket>
+              <bucket>&quot;WaitingRoom1&quot;</bucket>
+              <bucket>&quot;WaitingRoom2&quot;</bucket>
+              <bucket>&quot;WaitingRoom3&quot;</bucket>
+              <bucket>&quot;Wheelchair_1&quot;</bucket>
+              <bucket>&quot;Wheelchair_2&quot;</bucket>
+              <bucket>%all%</bucket>
+            </dictionary>
+          </manual-sort>
+          <filter class='categorical' column='[federated.12ny94w00dmn6g10vg8ci1tul05o].[none:NewStateName:nk]'>
+            <groupfilter function='union' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:NewStateName:nk]' member='&quot;Idle&quot;' />
+              <groupfilter function='member' level='[none:NewStateName:nk]' member='&quot;Interrupted&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.12ny94w00dmn6g10vg8ci1tul05o].[none:NewStateName:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='height' field='[federated.12ny94w00dmn6g10vg8ci1tul05o].[none:NewStateName:nk]' value='55' />
+            <format attr='display' class='0' field='[federated.12ny94w00dmn6g10vg8ci1tul05o].[sum:StateDuration:qk]' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.12ny94w00dmn6g10vg8ci1tul05o].[none:NewStateName:nk]' value='87' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.12ny94w00dmn6g10vg8ci1tul05o].[Object Name (group)]' value='196' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.12ny94w00dmn6g10vg8ci1tul05o].[none:Scenario:ok]' />
+              <tooltip column='[federated.12ny94w00dmn6g10vg8ci1tul05o].[attr:NewStateName:nk]' />
+              <text column='[federated.12ny94w00dmn6g10vg8ci1tul05o].[sum:StateDuration:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='auto' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.12ny94w00dmn6g10vg8ci1tul05o].[sum:StateDuration:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.12ny94w00dmn6g10vg8ci1tul05o].[none:Scenario:ok]' />
+              <tooltip column='[federated.12ny94w00dmn6g10vg8ci1tul05o].[attr:NewStateName:nk]' />
+              <text column='[federated.12ny94w00dmn6g10vg8ci1tul05o].[sum:StateDuration:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='auto' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.12ny94w00dmn6g10vg8ci1tul05o].[sum:Salary:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.12ny94w00dmn6g10vg8ci1tul05o].[none:Scenario:ok]' />
+              <tooltip column='[federated.12ny94w00dmn6g10vg8ci1tul05o].[attr:NewStateName:nk]' />
+              <text column='[federated.12ny94w00dmn6g10vg8ci1tul05o].[sum:StateDuration:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='auto' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.12ny94w00dmn6g10vg8ci1tul05o].[Object Name (group)] * ([federated.12ny94w00dmn6g10vg8ci1tul05o].[sum:StateDuration:qk] + [federated.12ny94w00dmn6g10vg8ci1tul05o].[sum:Salary:qk]))</rows>
+        <cols>([federated.12ny94w00dmn6g10vg8ci1tul05o].[none:Scenario:ok] / [federated.12ny94w00dmn6g10vg8ci1tul05o].[none:NewStateName:nk])</cols>
+        <table-calculations>
+          <partitionable-measures>
+            <column>[federated.12ny94w00dmn6g10vg8ci1tul05o].[sum:Scenario:ok]</column>
+          </partitionable-measures>
+        </table-calculations>
+      </table>
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources />
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='ResourceState'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='124'>
+            <card param='[federated.12ny94w00dmn6g10vg8ci1tul05o].[none:NewStateName:nk]' type='filter' />
+            <card pane-specification-id='2' param='[federated.12ny94w00dmn6g10vg8ci1tul05o].[none:Scenario:ok]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+    </window>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='ResourceState' width='192'>
+      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
+      pSXkaYTjQBQAAAAASUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>
